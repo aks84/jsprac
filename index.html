@@ -7,20 +7,71 @@
     <title>Dynamic Copyright Year</title>
 </head>
 <body>
+
+<h2>Translate Any Website...</h2>
+
+<form name="transForm">
+<input type="text" name="myurl" id="site" placeholder="Type your site with http"> <br><br>
+
+<select name="translateWeb" id="langCode"  >
+    <option value="en" selected>English</option>
+    <option value="ar">Arabic</option>
+    <option value="zh">Chinese</option>
+    <option value="es">Spanish</option>
+    <option value="hi">Hindi</option>
+    <option value="ja">Japanese</option>
+</select>
+
+<br><br>
+
+<button type="button" onclick="translateSite()">Translate</button>
+
+</form>
+<hr>
 <div id="copyright">
     
-</div>
-
+    </div>
 <script>
 
+// dynamic copyright year function
 function dynYear(){
     var date = new Date();
     var getYear = date.getFullYear();
-    document.querySelector("#copyrightYear").innerHTML=getYear;
+    document.querySelector("#copyright").innerHTML=getYear;
+  }dynYear();
+
+// Translate website in local languages
+// http://www.microsofttranslator.com/bv.aspx?from=en&to=hi&a=websjyoti.com
+
+
+
+function translateSite()
+{
+    // get the url value
+    var myUrl = document.querySelector('#site').value;
+    // get the lang code value
+    var langCode = document.querySelector('#langCode').value; 
+
+  
+    // join the dots
+     var url2translate = "http://www.microsofttranslator.com/bv.aspx?from=en&to="+langCode+"&a="+myUrl;
+
+    //  translate the website
+    window.location = url2translate;
+     
     
     
-    
-}dynYear();
+}
+
+
+
+
+
+// add location to the option > selection list
+
+// marquee type head > title 
+
+// timeout inbuilt function, implement it in a lownload page and then redirect to the same download page again
 
 
 </script>
