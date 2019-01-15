@@ -8,6 +8,32 @@
 </head>
 <body>
 
+<!-- append location to the list -->
+<h3>Where do you dwell?</h3>
+<form name="appendForm">
+    <input type="text" name="fullName" placeholder="Full Name..."> <br>
+    <input type="phone" name="phone" placeholder="99 885 53 888"> <br>
+    <input type="text" name="firstLine" placeholder="First line address.."><br>
+    <input type="text" name="street" placeholder="Street"> <br>
+    <select name="city" id="stateCity">
+        <option value="null" selected>Select District</option>
+        <option value="Ambala">Ambala</option>
+        <option value="Bhiwani">Bhiwani</option>
+        <option value="Charkhi Dadri">Charkhi Dadri</option>
+        <option value="Faridabad">Faridabad</option>
+        <option value="Fatehabad">Fatehabad</option>
+        <option value="Gurugram">Gurugram</option>
+        <option value="Hisar">Hisar</option>
+        <option value="Jhajjar">Jhajjar</option>
+        <option value="Jind">Jind</option>
+        <option value="Kaithal">Kaithal</option>
+    </select><br><br>
+    <button type="button" id="addBtn" onclick="addCity()">Add District +</button><br><br>
+    <button type="button">Submit</button>
+
+</form>
+
+<hr>
 <h2>Translate Any Website...</h2>
 
 <form name="transForm">
@@ -28,6 +54,7 @@
 
 </form>
 <hr>
+<h5>It'll change next year....</h5>
 <div id="copyright">
     
     </div>
@@ -39,6 +66,8 @@ function dynYear(){
     var getYear = date.getFullYear();
     document.querySelector("#copyright").innerHTML=getYear;
   }dynYear();
+
+
 
 // Translate website in local languages
 // http://www.microsofttranslator.com/bv.aspx?from=en&to=hi&a=websjyoti.com
@@ -67,11 +96,31 @@ function translateSite()
 
 
 
-// add location to the option > selection list
+// add  new location to the select > option list
+
+function addCity(){
+    // onclick get city name
+    var cityName = prompt("Type your city name and press ok.");
+        
+    // get the city list
+    var myList = document.querySelector("#stateCity");
+    // apped the city to the list
+    if(cityName){
+        var createOption = document.createElement('option');
+        var newOption = myList.appendChild(createOption);
+        newOption.innerText=cityName;
+    }
+
+}
 
 // marquee type head > title 
 
+var pageTitle = document.title = "Google will run this JS and show the title in the search results!";
+
+
 // timeout inbuilt function, implement it in a lownload page and then redirect to the same download page again
+
+
 
 
 </script>
