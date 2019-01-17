@@ -14,5 +14,49 @@ function titleMarquee() {
 <body onload="titleMarquee()">
 <h1>Animated/Scrolling Web page Title</h1>
 <p>Have a look at the Page title. Its scrolling ....</p>
+
+
+<h2 id="change"></h2>
+
+<hr>
+<script>
+
+// var count = 10;
+// var counterIncrement=-1;
+// var counter = setInterval(timer, 1000); 
+
+// function timer() {
+//   count = count+counterIncrement;
+//   if (count == 0 || count == 10 ) {
+//         counterIncrement = -counterIncrement;
+//     }
+//   console.log(count);
+// }
+
+// var count = 0, step = 1;
+// var counter = setInterval(function() {
+//     if (count<0 || count>10) 
+//         count += step *= -1; // change direction and go back into
+//     var myH = document.getElementById('change');
+//     myH.innerHTML=count;
+//     count += step;
+// }, 500);
+
+var counter = 10;
+
+setInterval(function() {
+    counter = counter - 1;
+
+    if (counter < 0) {
+        counter = 10;
+    }
+    var myH = document.getElementById('change');
+    myH.innerHTML=counter;
+}, 500);
+
+
+</script>
+
+
 </body>
 </html> 
