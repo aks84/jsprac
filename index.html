@@ -8,6 +8,10 @@
 </head>
 <body>
 
+    <h2 id="myH"></h2>
+
+    <hr>
+
 <!-- append location to the list -->
 <h3>Where do you dwell?</h3>
 <form name="appendForm">
@@ -118,9 +122,18 @@ function addCity(){
 var pageTitle = document.title = "Google will run this JS and show the title in the search results!";
 
 
-// timeout inbuilt function, implement it in a lownload page and then redirect to the same download page again
-
-
+// SetTimeout, setInterval inbuilt function, implement it in a lownload page and then redirect to the same download page again
+var myNum = 0;
+setInterval(()=>{
+    if(myNum < 10){
+        
+        myNum = myNum + 1;
+        let myHeading = document.getElementById(myH);
+        myH.innerHTML=myNum;
+        
+        
+    }
+},500)
 
 
 </script>
